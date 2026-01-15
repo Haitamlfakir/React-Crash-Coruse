@@ -65,13 +65,13 @@ Instead of this (delete the single quotes):
 if (sender === "robot") {
     return (
         <div>
-            '<img src="robot.png" width="50" />'
+            img
             {message}
         </div>
     );
 }
 We use this (delete the single quotes):
-{sender === "robot" $$ '<img src="robot.png" width="50" />'}
+{sender === "robot" $$ img}
 
 Best Practice:
 - Use a component (App) to create a Website.
@@ -119,7 +119,7 @@ onClick = run a function that we click
 event.target = gives us the element that we're typing in
 ** State ** = save data that changes over time
 Lifting the State Up : share state between multiple components
-<img src="assets/LTSU.png.png" height="400">
+<img src="assets/LTSU.png" height="400">
 Naming convention used in the React Documentation
 Example:
     function Video({video}) {
