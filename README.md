@@ -61,17 +61,75 @@ const result = value1 && value2;
 - if value1 is true, the result will be value2.
 - this works just like an if-statement.
 EXAMPLE:
-Instead of this:
+Instead of this (delete the single quotes):
 if (sender === "robot") {
     return (
         <div>
-            <img src="robot.png" width="50" />
+            '<img src="robot.png" width="50" />'
             {message}
         </div>
     );
 }
-We use this :
-{sender === "robot" $$ <img src="robot.png" width="50" />}
+We use this (delete the single quotes):
+{sender === "robot" $$ '<img src="robot.png" width="50" />'}
 
 Best Practice:
 - Use a component (App) to create a Website.
+
+Lesson 3: State, Event Handlers, Create the Chatbot Features
+How .map() works:
+(chatMessage) => {
+    return ...     --------> new value1 
+}
+(chatMessage) => {
+    return ...     --------> new value2 
+}
+(chatMessage) => {
+    return ...     --------> new value3
+}
+(chatMessage) => {
+    return ...     --------> new value4
+}
+
+{} = save the value/result of the code into the prop (including a function)
+** 1- Save the data **
+** 2- Generate the HTML **
+<img src="assets/otc.png">
+<img src="assets/otc2.png">
+<img src="assets/key.png">
+key = helps React track changes in the array
+Event Handler = run a function when interact with the website
+camelCase = first word is lowercase, all other words start with a capital
+cyrpto.randomUUID() : generate a unique ID string
+** State ** = data that is connected to the HTML. When we update this data, it will update the HTML
+🛑 In React, we should not update the data directly. If we update the data directly React will not update the HTML
+<img src="assets/data.png">
+If we use this function to update the data, React will update the HTML (Updater Function)
+In React, we should not modify the data directly. We should always create a copy, and then modify the copy
+(This helps React be more efficient)
+Spread Operator (...) = takes the values in an arrya, and then copies them into a new array
+Example:
+<img src="assets/sendMessage().png">
+** Array Destructuring (The order matters) : **
+<img src="assets/shortcut.png">
+React Best Practice:
+Do not use the DOM manually (React is managing the website)
+We should use React features to get the text from a textbox
+onClick = run a function that we click
+event.target = gives us the element that we're typing in
+** State ** = save data that changes over time
+Lifting the State Up : share state between multiple components
+<img src="assets/LTSU.png.png" height="400">
+Naming convention used in the React Documentation
+Example:
+    function Video({video}) {
+        retrun (
+            <div>
+            ...
+        )
+    }
+    <Video key={video.id} video={video}>
+value = change the text inside this <input>
+To get response from the Chatbot we should add en external library:
+** Please Note ** : State does not update immediately ❌ State is updated after all the code is finished ✅
+Update the state ➡️ React automatically update the website
